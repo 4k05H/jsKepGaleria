@@ -1,6 +1,4 @@
 window.addEventListener("load", init);
-window.addEventListener("click", galeria);
-
 
 function ID(elem) {
     return document.getElementById(elem);
@@ -33,14 +31,12 @@ var kepeim = [{
 
 var kepindex = 0;
 function galeria(){
-    if (kepindex == 0){
-        var txt ="<div class='galeria' id='elsokep'><img src='"+kepeim[4].eleres+"' alt='"+kepeim[4].leírás+"' id='kivalasztott' onclick='elsokepClick()'></div><div class='galeria' id='masodikkep'><img src='"+kepeim[kepindex].eleres+"' alt='"+kepeim[kepindex].leírás+"' id='kivalasztott'></div><div class='galeria' id='harmadikkep'><img src='"+kepeim[kepindex+1].eleres+"'' alt='"+kepeim[kepindex+1].leírás+"' id='kivalasztott' onclick='harkepClick()'></div>";
-    }else if (kepindex == 4){
-    var txt ="<div class='galeria'  id='elsokep'><img src='"+kepeim[kepindex-1].eleres+"' alt='"+kepeim[kepindex-1].leírás+"' id='kivalasztott' onclick='elsokepClick()'></div><div class='galeria' id='masodikkep'><img src='"+kepeim[kepindex].eleres+"' alt='"+kepeim[kepindex].leírás+"' '></div><div class='galeria' id='harmadikkep'><img src='"+kepeim[0].eleres+"'' alt='"+kepeim[0].leírás+"' id='kivalasztott' onclick='harkepClick()'></div>";
-    }else{
-        var txt ="<div class='galeria' id='elsokep'><img src='"+kepeim[kepindex-1].eleres+"' alt='"+kepeim[kepindex-1].leírás+"' '></div><div class='galeria' id='masodikkep'><img src='"+kepeim[kepindex].eleres+"' alt='"+kepeim[kepindex].leírás+"' id='kivalasztott' onclick='elsokepClick()'></div><div class='galeria' id='harmadikkep'><img src='"+kepeim[kepindex+1].eleres+"'' alt='"+kepeim[kepindex+1].leírás+"' id='kivalasztott' onclick='harkepClick()'></div>";
+    var txt = "";
+    for(let index = 0; index < kepcim.length; index++) {
+        txt += '<div class="kep"> <img src="" alt="" ></div>'
+        
     }
-    ID("inp").innerHTML=txt;
+    ID("inp").innerHTML = txt;
 }
 function init() {
     ID("balra").addEventListener("click", balra);
